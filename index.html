@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio player</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+        <audio id="clocks">
+            <source src="assets/audio/clocks.mp3" type="audio/mp3">
+            <source src="assets/audio/clocks.ogg" type="audio/ogg">
+        </audio>
+        <audio id="high">
+            <source src="assets/audio/Highonlife.mp3" type="audio/mp3">
+            <source src="assets/audio/Highonlife.ogg" type="audio/ogg">
+        </audio>
+        <audio id="ocean">
+            <source src="assets/audio/ocean.mp3" type="audio/mp3">
+            <source src="assets/audio/ocean.ogg" type="audio/ogg">
+        </audio>
+        <audio id="skyfull">
+            <source src="assets/audio/skyfull.mp3" type="audio/mp3">
+            <source src="assets/audio/skyfull.ogg" type="audio/ogg">
+        </audio>
+        <audio id="weare">
+            <source src="assets/audio/wearethepeople.mp3" type="audio/mp3">
+            <source src="assets/audio/wearethepeople.ogg" type="audio/ogg">
+        </audio>
+    <div class="container">
+        <div class="start-img"></div>
+        <div class="nummer-select">
+            <ul>
+                <li><p onclick="playSong('clocks');" class="nummer">1.Clocks</p></li>
+                <li><p onclick="playSong('high');" class="nummer" >2.High on life</p></li>
+                <li><p onclick="playSong('ocean');" class="nummer" >3.Ocean</p></li>
+                <li><p onclick="playSong('skyfull');" class="nummer" >4.Sky full of stars</p></li>
+                <li><p onclick="playSong('weare');" class="nummer" >5.We are the people</p></li>
+            </ul>
+        </div>
+    </div>
+    <script>  
+    function playSong(songId) {       
+    document.getElementById(songId).play();
+    playSong(songId)
+        document.querySelector(".start-img").src=event.children[0].src
+    }
+    </script>
+</body>
+</html>

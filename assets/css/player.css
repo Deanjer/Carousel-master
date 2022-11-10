@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+img{
+    float: left;
+}
+.flex-container{
+    background-color: black;
+    height: 200px;
+    width: 100%
+}
+button{
+    width: 5%;
+    height: 40px;
+}
+.content-all{
+    width: 100%;
+}
+.card{
+    width: 40%;
+    height: 850px;
+    background-color: grey;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    overflow: hidden;
+}
+body{
+    background-color: antiquewhite;
+}

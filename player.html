@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/player.css">
+</head>
+<body>
+    <div class="content-all">
+        <div class="card">
+    <div class="flex-container">
+        <div><button class="arrow" onclick="previous();">Prev</button></div>
+        <div><img data-song-id="clocks" src="/assets/images/clocks.jpeg" width="100" height="100" id="plaatje1"></div>
+        <div><img data-song-id="high" src="/assets/images/highonlife.jpeg" width="100" height="100" id="plaatje2"></div>
+        <div style="background-color:rgb(255, 255, 255);"><img data-song-id="ocean" src="/assets/images/ocean.jpeg" width="100" height="100" id="plaatje3"></div>  
+        <div><img data-song-id="sky" src="/assets/images/skyfull.jpeg" width="100" height="100" id="plaatje4"></div>  
+        <div><img data-song-id="weare" src="/assets/images//wearethepeople.jpeg" width="100" height="100" id="plaatje5"></div>  
+        <div><button onclick="next();">Next</button></div>
+    </div>
+
+    <audio id="clocks">
+        <source src="/assets/audio/clocks.oog" type="audio/ogg">
+        <source src="/assets/audio/clocks.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="high">
+        <source src="/assets/audio/Highonlife.ogg" type="audio/ogg">
+        <source src="/assets/audio/Highonlife.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="ocean">
+        <source src="/assets/audio/ocean.ogg" type="audio/ogg">
+        <source src="/assets/audio/ocean.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sky">
+        <source src="/assets/audio/skyfull.ogg" type="audio/ogg">
+        <source src="/assets/audio/skyfull.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="weare">
+        <source src="/assets/audio/wearethepeople.ogg" type="audio/ogg">
+        <source src="/assets/audio/wearethepeople.mp3" type="audio/mpeg">
+    </audio>
+</div>
+</div>
+    <script>
+        function previous() {
+            console.log('previous');
+
+            // laat de previous button werken
+        }
+        
+        function next() {
+            console.log('next');
+
+            var src1 = document.getElementById('plaatje1').src;
+            var src2 = document.getElementById('plaatje2').src;
+            var src3 = document.getElementById('plaatje3').src;
+            var src4 = document.getElementById('plaatje4').src;
+            var src5 = document.getElementById('plaatje5').src;
+
+            document.getElementById('plaatje1').src = src5; 
+            document.getElementById('plaatje2').src = src1;
+            document.getElementById('plaatje3').src = src2;
+            document.getElementById('plaatje4').src = src3;
+            document.getElementById('plaatje5').src = src4;
+
+            var dsi1 = document.getElementById('plaatje1').getAttribute('data-song-id');
+            var dsi2 = document.getElementById('plaatje2').getAttribute('data-song-id');
+            var dsi3 = document.getElementById('plaatje3').getAttribute('data-song-id');
+            var dsi4 = document.getElementById('plaatje4').getAttribute('data-song-id');
+            var dsi5 = document.getElementById('plaatje5').getAttribute('data-song-id');
+
+            document.getElementById('plaatje1').setAttribute('data-song-id', dsi5); 
+            document.getElementById('plaatje2').setAttribute('data-song-id', dsi1); 
+            document.getElementById('plaatje3').setAttribute('data-song-id', dsi2); 
+            document.getElementById('plaatje4').setAttribute('data-song-id', dsi3); 
+            document.getElementById('plaatje5').setAttribute('data-song-id', dsi4); 
+
+            var nummer3 = document.getElementById('plaatje3');            
+            var songId  = nummer3.getAttribute('data-song-id');
+
+            playSong(songId);
+        }
+
+        function playSong(songId) {
+            console.log('playSong '+songId);
+            document.getElementById(songId).play();
+        }
+    </script>  
+</body>
+</html>
